@@ -12,6 +12,7 @@ public class Exercise1 {
       
       for (int i = 0; i < s.length(); i++) {
          if (Character.isDigit(s.charAt(i))) {
+            //digits[s.charAt(x) - '0']++;
             switch (s.charAt(i)) {
                case '0':
                   digits[0]++;
