@@ -1,0 +1,78 @@
+int i = 0, j = result.length - 1;
+while (i < list.length) {
+	result[j] = list[i];
+	i++;
+	j--;
+}
+
+
+int sum = 0, count = 0;
+for (int i = 0; i < arr.length; i++) {
+	for (int j = 0; j < arr[i].length; j++) {
+		sum += arr[i][j];
+		count++;
+	}
+}
+double average = 0;
+if (count > 0) average = sum / count;
+System.out.print(average);
+
+
+public static void smallestByColumn (int[][] arr) {
+	for (int i = 0; i < arr[0].length; i++) {
+		int smallest = arr[0][i];
+		for (int j = 1; j < arr.length; j++) {
+			if (arr[j][i] < smallest) {
+				smallest = arr[j][i];
+			}
+		}
+		System.out.println(smallest);
+	}
+}
+
+
+public static char[] getChars (String parameter) {
+	char[] characters = new char[parameter.length()];
+	for (int i = 0; i < parameter.length(); i++) {
+		characters[i] = parameter.charAt(i);
+	}
+	return characters;
+}
+
+
+class Book {
+	private String title;
+	private double price;
+	private int quantity;	
+
+   	Book (String t, double p, int q) {
+      		title = t;
+		setPrice(p);
+		setQuantity(q);
+   	}
+
+	String getTitle() {
+		return title;
+	}
+
+	void setPrice(double pr) {
+		if (pr > -1) price = pr;
+		else price = 0;
+	}
+
+	double getPrice() {
+		return price;
+	}
+
+	void setQuantity(int qu) {
+		if (qu > -1) quantity = qu;
+		else quantity = 0;
+	}
+
+	int getQuantity() {
+		return quantity;
+	}
+}
+
+
+Book book = new Book("My First Book", 12.69, 10);
