@@ -1,0 +1,26 @@
+class MountainBike extends Bicycle {
+	private int seatHeight;
+
+	MountainBike(int gear, int speed, int seatHeight) {
+		super(gear, speed);
+		this.seatHeight = seatHeight;
+	}
+
+	public void applyBrake(int decrement) 
+	{
+		speed -= decrement;
+		return speed;
+	} 
+
+	public void speedUp(int increment) 
+	{
+		speed += increment;
+		return speed;
+	}
+
+	public String toString() {return("No of gears are " + gear + ", speed of mountain bike is " + speed + ", seat height of mountain bike is " + seatHeight);}
+
+}
+
+MountainBike mb1 = new MountainBike(12, 80, 4);
+System.out.println(mb1.toString());
