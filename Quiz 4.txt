@@ -6,13 +6,13 @@ class MountainBike extends Bicycle {
 		this.seatHeight = seatHeight;
 	}
 
-	public void applyBrake(int decrement) 
+	public int applyBrake(int decrement) 
 	{
 		speed -= decrement;
 		return speed;
 	} 
 
-	public void speedUp(int increment) 
+	public int speedUp(int increment) 
 	{
 		speed += increment;
 		return speed;
