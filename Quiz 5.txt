@@ -1,12 +1,18 @@
-try {
+import java.util.Scanner;
+
+public class Problem8 {
+   public static void main(String[] args) {
+      try {
 	Scanner input = new Scanner(System.in);
 	double value = input.nextDouble();
         input.close();
 	double squareRoot = Math.sqrt(value);
 	System.out.println("The square root of " + value + " is equal to: " + squareRoot);
-}
-catch (ArithmeticException ex) {
+	}
+	catch (ArithmeticException ex) {
 	System.out.println("Cannot find the square root of a negative number.");
+	}
+   }
 }
 
 
