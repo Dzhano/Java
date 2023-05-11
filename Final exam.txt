@@ -1,0 +1,91 @@
+// Question 11
+// First way
+int size = 0;
+for (int i = 0; i < my_array.length; i++) {
+      for (int y = 0; i < my_array[i].length; y++) {
+            for (int z = 0; z < my_array[i][y].length; z++) {
+                  size++;
+            }
+      }
+}
+
+
+// Second way
+int size = my_array.length * my_array[0].length * my_array[0][0].length;
+
+
+// Third way
+int size = 0;
+for (int i = 0; i < my_array.length; i++) {
+      for (int y = 0; i < my_array[i].length; y++) {
+            size += my_array[i][y].length;
+      }
+}
+
+
+
+
+
+// Question 13
+System.out.print("Please enter a number in the range 1 through 9 (inclusive): "); // Asking the user to enter the number.
+try {
+   Scanner input = new Scanner(System.in); // Allows us to write from the keyboard.
+   double number = input.nextDouble(); // Reading a number. I will use a "double" variable since it i not stated that the number is an integer and therefore it could be a fractional number.
+   input.close(); // Closing the input's reading.
+   if (number >= 1 && number <= 9) { // Checking if the condition is met.
+      System.out.println("Thank you"); // Showing a message in case everything goes smoothly.
+   } else {
+      throw new Exception("Error: out of range"); // Throwing an exception in case the number is out of range.
+   }
+}
+catch (Exception ex) { // In case the number is not between 1 and 9 (inclusive).
+   System.out.println(ex.getMessage()); // We give an error message.
+}
+
+
+
+
+
+// Question 14
+public interface Drinkable {
+      void drink();
+}
+
+public class Orange implements Drinkable {
+      public void drink() {
+            System.out.println("Orange Juice");
+      }
+}
+
+public class Lemon implements Drinkable {
+      public void drink() {
+            System.out.println("Lemonade");
+      }
+}
+
+
+Orange juice = new Orange();
+juice.drink();
+Lemon lemonade = new Lemon();
+lemonade.drink();
+
+
+
+
+
+// Question 15
+public static void Average (int[][] array) { // The method takes a two-dimensional integer array as a parameter.
+      int i = 0; // To count at which row we are right now.
+      while(i < array.length) { // This loop goes through all rows (the first dimension of the integer array).
+         double sum = 0; // The sum of all elements of the current row.
+         int y = 0; // To count at which element we are right now.
+         while (y < array[i].length) { // This loop goes through all elements of the current row (the second dimension of the integer array).
+            sum += array[i][y]; // Adding an element to the row's sum.
+            y++; // Moving to the next element.
+         }
+         double average = (double) sum / array[i].length; // Calculating the average of all numbers in the current row.
+         System.out.println("The average of all numbers from the number " + (i + 1) + " row of two-dimensional integer array is " + average); // The output for the user with the average of the row.
+
+         i++; // Moving to the next row.
+      }
+}
